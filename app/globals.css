@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Hide Swiper's pagination and scrollbar globally */
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar,
+.swiper-pagination {
+  display: none !important;
+}

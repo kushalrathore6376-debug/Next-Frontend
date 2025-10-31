@@ -85,13 +85,6 @@ export default function TimelineCarousel() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <style jsx global>{`
-            .swiper-horizontal > .swiper-scrollbar,
-            .swiper-scrollbar,
-            .swiper-pagination {
-              display: none !important;
-            }
-          `}</style>
         </div>
         <h3 className="text-white text-4xl md:text-5xl font-bold text-center mb-12">
           Know More
