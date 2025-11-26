@@ -9,7 +9,7 @@ export default function Home() {
     "/Logo Radox .JPG",
     "/MNIT logo.jpg",
     "/finaloasislogo.svg",
-    "/Logo iiiTD.PNG",
+    "/Logo IIITD.PNG",
     "/Logo PRESPL.png",
     "/Logo Metrecon.PNG",
     "/Logo NCCBM.PNG",
