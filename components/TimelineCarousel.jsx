@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import Image from "next/image";
+import Link from "next/link";
 
 const timelineEvents = [
   {
@@ -13,7 +14,75 @@ const timelineEvents = [
     description:
       "First industrial plant commissioned with full carbon capture process.",
   },
-  // ... keep rest of events as-is ...
+  {
+    date: "DECEMBER 2024",
+    image: "/timeline2.svg",
+    label: "Scale Up",
+    description:
+      "Expansion to two more industrial facilities in Europe and Asia.",
+  },
+  {
+    date: "JUNE 2025",
+    image: "/timeline3.svg",
+    label: "New Technology",
+    description:
+      "Launch of next-gen reactor for increased efficiency and throughput.",
+  },
+  {
+    date: "JULY 2025",
+    image: "/timeline4.svg",
+    label: "First Carbon Credit",
+    description: "TraceXero issues first third-party verified carbon credit.",
+  },
+  {
+    date: "August 2025",
+    image: "/timeline4.svg",
+    label: "Global Milestone",
+    description: "Entered strategic partnership for global market expansion.",
+  },
+  {
+    date: "September 2025",
+    image: "/timeline4.svg",
+    label: "Award Winner",
+    description: "Won international award for innovation in carbon removal.",
+  },
+  {
+    date: "October 2025",
+    image: "/timeline4.svg",
+    label: "1MT Captured",
+    description: "Achieved 1 million tons of CO₂ captured milestone.",
+  },
+  {
+    date: "November 2025",
+    image: "/timeline4.svg",
+    label: "New Product",
+    description: "Launched byproduct for use in energy storage.",
+  },
+  {
+    date: "December 2025",
+    image: "/timeline4.svg",
+    label: "Green Factory",
+    description: "All facilities now fully powered by renewables.",
+  },
+  {
+    date: "January 2026",
+    image: "/timeline4.svg",
+    label: "Verified Impact",
+    description:
+      "Third-party audit: technology verified as net carbon negative.",
+  },
+  {
+    date: "February 2026",
+    image: "/timeline4.svg",
+    label: "Global Deployment",
+    description: "Expanded to deploy in North America and Oceania.",
+  },
+  {
+    date: "March 2026",
+    image: "/timeline4.svg",
+    label: "Science Publication",
+    description: "Results published in top scientific journal.",
+  },
   {
     date: "April 2026",
     image: "/timeline4.svg",
@@ -32,7 +101,7 @@ export default function TimelineCarousel() {
         <div className="relative flex flex-col items-center mb-20">
           {/* Timeline Line (absolute, behind carousel) */}
           <div
-            className="absolute top-8 left-0 right-0 h-2 w-full bg-yellow-200"
+            className="absolute top-11 left-0 right-0 h-2 w-full bg-yellow-200"
             style={{ zIndex: 1 }}
           />
           <Swiper
@@ -90,12 +159,19 @@ export default function TimelineCarousel() {
           Know More
         </h3>
         <div className="flex flex-col md:flex-row gap-10 md:gap-28 justify-center w-full pb-3">
-          <button className="border border-orange-400 px-12 py-4 text-orange-400 tracking-widest rounded-none hover:bg-orange-400 hover:text-black transition flex items-center justify-between text-lg font-light w-full md:w-auto">
-            TECHNOLOGY <span className="ml-3">&gt;</span>
-          </button>
-          <button className="border border-orange-400 px-12 py-4 text-orange-400 tracking-widest rounded-none hover:bg-orange-400 hover:text-black transition flex items-center justify-between text-lg font-light w-full md:w-auto">
-            3 POINT CLIMATE IMPACT GOAL <span className="ml-3">&gt;</span>
-          </button>
+          <Link
+            href="/technology"
+            className="border border-orange-400 px-8 sm:px-10 md:px-12 py-3 sm:py-4 text-orange-400 tracking-wider sm:tracking-widest rounded-none hover:bg-orange-400 hover:text-black transition flex items-center justify-between text-sm sm:text-base md:text-lg font-light w-full sm:w-auto"
+          >
+            TECHNOLOGY <span className="ml-2 sm:ml-3">&gt;</span>
+          </Link>
+          <Link
+            href="/climate-impact-goal"
+            className="border border-orange-400 px-8 sm:px-10 md:px-12 py-3 sm:py-4 text-orange-400 tracking-wider sm:tracking-widest rounded-none hover:bg-orange-400 hover:text-black transition flex items-center justify-between text-sm sm:text-base md:text-lg font-light w-full sm:w-auto"
+          >
+            3 POINT CLIMATE IMPACT GOAL{" "}
+            <span className="ml-2 sm:ml-3">&gt;</span>
+          </Link>
         </div>
       </div>
     </section>
