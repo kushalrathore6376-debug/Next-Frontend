@@ -44,6 +44,7 @@ export default function TeamSection({ members }) {
         setFetchError(error.message || "Failed to load team data.");
         setRemoteMembers(null);
         return;
+        
       }
       if (Array.isArray(data) && data.length > 0) {
         setRemoteMembers(data);
