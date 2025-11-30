@@ -37,7 +37,7 @@ export default function TeamSection({ members }) {
     let ignore = false;
     const fetchTeams = async () => {
       const { data, error } = await get(
-        "https://backend-iqm4.onrender.com/api/teams",
+        "https://api.tracexero.com/api/teams",
         {
           onLoading: setLoading,
         }
