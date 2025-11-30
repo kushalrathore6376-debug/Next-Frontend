@@ -3,6 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
+import ImpactHeaderSection from "./ImpactHeaderSection";
+import VisionSection from "./VisionSection";
+import KnowMoreSection from "./KnowMoreSection";
 
 export default function Home() {
   const supportedLogos = [
@@ -146,67 +149,118 @@ export default function Home() {
             /> */}
           </div>
         </div>
+        <section>
+          <div className="min-h-screen w-full flex flex-col">
+            <ImpactHeaderSection />
+            <VisionSection />
+            {/* <KnowMoreSection /> */}
+          </div>
+        </section>
 
         {/* STATS/HERO SECTION BELOW LANDING */}
-        <section className="w-full pt-12 sm:pt-16 md:pt-20 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col items-center bg-black">
-          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-center mb-8 sm:mb-12 md:mb-14 px-4 leading-tight">
-            Driving the World to Net Zero Emmisions
-          </h2>
-          {/* Stats Row */}
-          <div className="flex flex-col sm:flex-row gap-8 sm:gap-10 md:gap-16 lg:gap-28 items-center justify-center mb-6 sm:mb-7 w-full px-4">
-            {/* Stat 1 */}
-            <div className="flex flex-col items-center">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full flex items-center justify-center mb-4 sm:mb-6 bg-linear-to-br from-lime-100 via-green-300 to-green-700/80 shadow-lg">
-                <span
-                  className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wider sm:tracking-widest"
-                  style={{ textShadow: "0 0 10px #0008" }}
-                >
-                  2KG/Day
-                </span>
+        <section className="w-full pt-16 sm:pt-20 md:pt-24 pb-20 sm:pb-24 md:pb-28 px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col items-center bg-black relative overflow-hidden">
+          {/* Background gradient effect */}
+          <div className="absolute inset-0 bg-radial-gradient(circle_at_center,rgba(115,169,74,0.1),transparent_70%) pointer-events-none" />
+
+          <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center mb-4 sm:mb-6 px-4 leading-tight tracking-tight">
+              Driving the World to Net Zero{" "}
+              <span className="text-[#73A94A]">Emissions</span>
+            </h2>
+
+            {/* Stats Row */}
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 md:gap-16 max-w-5xl mx-auto mb-10 sm:mb-12 md:mb-16 w-full px-4">
+              {/* Stat 1 */}
+              <div className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 sm:p-10 md:p-12 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2">
+                <div className="flex flex-col items-center text-center">
+                  {/* Icon/Accent */}
+                  <div className="mb-6 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#73A94A]/20 flex items-center justify-center border border-[#73A94A]/30 group-hover:bg-[#73A94A]/30 group-hover:border-[#73A94A]/50 transition-all duration-300">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#73A94A] opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+
+                  {/* Number */}
+                  <div className="mb-4">
+                    <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-2">
+                      2KG
+                    </span>
+                    <span className="block text-[#73A94A] text-sm sm:text-base font-semibold uppercase tracking-wider">
+                      /Day
+                    </span>
+                  </div>
+
+                  {/* Label */}
+                  <div className="space-y-1">
+                    <p className="text-white text-lg sm:text-xl md:text-2xl font-semibold tracking-wide">
+                      CO₂ Captured
+                    </p>
+                    <p className="text-white/50 text-sm sm:text-base">
+                      Daily Average
+                    </p>
+                  </div>
+                </div>
               </div>
-              <p className="text-white text-base sm:text-lg md:text-xl tracking-wide font-light text-center">
-                CO2 Captured
+
+              {/* Stat 2 */}
+              <div className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 sm:p-10 md:p-12 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2">
+                <div className="flex flex-col items-center text-center">
+                  {/* Icon/Accent */}
+                  <div className="mb-6 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#73A94A]/20 flex items-center justify-center border border-[#73A94A]/30 group-hover:bg-[#73A94A]/30 group-hover:border-[#73A94A]/50 transition-all duration-300">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#73A94A] opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+
+                  {/* Number */}
+                  <div className="mb-4">
+                    <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-2">
+                      3,362KG
+                    </span>
+                    <span className="block text-[#73A94A] text-sm sm:text-base font-semibold uppercase tracking-wider">
+                      Total
+                    </span>
+                  </div>
+
+                  {/* Label */}
+                  <div className="space-y-1">
+                    <p className="text-white text-lg sm:text-xl md:text-2xl font-semibold tracking-wide">
+                      CO₂ Captured
+                    </p>
+                    <p className="text-white/50 text-sm sm:text-base">
+                      Since Feb 2022
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Company Description */}
+            <div className="max-w-4xl mx-auto mb-10 sm:mb-12 md:mb-14 px-4 sm:px-6 md:px-8">
+              <p className="text-white/80 text-lg sm:text-xl md:text-2xl font-light tracking-wide leading-relaxed text-center">
+                Our global company is led by industry experts with over a decade
+                of experience designing, building, financing and operating
+                industrial carbon capture systems.
               </p>
             </div>
-            {/* Stat 2 */}
-            <div className="flex flex-col items-center">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full flex items-center justify-center mb-4 sm:mb-6 bg-linear-to-br from-lime-100 via-green-300 to-green-700/80 shadow-lg">
-                <span
-                  className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wider sm:tracking-widest"
-                  style={{ textShadow: "0 0 10px #0008" }}
-                >
-                  3362KG
+
+            {/* 'How it works' Button */}
+            <Link
+              href="/how-it-works"
+              className="group relative border-2 border-orange-400 px-8 sm:px-10 md:px-12 py-3 sm:py-4 text-orange-400 tracking-wider sm:tracking-widest rounded-none hover:bg-orange-400 hover:text-black transition-all duration-300 flex items-center justify-center text-sm sm:text-base md:text-lg font-semibold overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center gap-2 sm:gap-3">
+                HOW IT WORKS
+                <span className="transform group-hover:translate-x-1 transition-transform duration-300">
+                  &gt;
                 </span>
-              </div>
-              <p className="text-white text-base sm:text-lg md:text-xl tracking-wide font-light text-center">
-                CO2 Captured
-                <br />
-                Since Feb 2022
-              </p>
-            </div>
+              </span>
+              <div className="absolute inset-0 bg-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            </Link>
           </div>
-          {/* Company Description */}
-          <p className="max-w-3xl text-white text-base sm:text-lg md:text-xl font-light tracking-wide sm:tracking-widest text-center mb-6 sm:mb-8 md:mb-10 px-4 sm:px-6 md:px-8">
-            Our global company is led by industry experts with over a decade of
-            experience designing, building, financing and operating industrial
-            carbon capture systems.
-          </p>
-          {/* 'How it works' Button */}
-          <Link
-            href="/how-it-works"
-            className="border border-orange-400 px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 text-orange-400 tracking-wider sm:tracking-widest rounded-none hover:bg-orange-400 hover:text-black transition flex items-center justify-center text-sm sm:text-base font-semibold"
-          >
-            HOW IT WORKS <span className="ml-2 sm:ml-3">&gt;</span>
-          </Link>
         </section>
 
         {/* NEWS & SUPPORTED SECTION - LIGHT */}
         <section className="bg-white w-full py-12 sm:py-16 md:py-20 px-4 sm:px-5 md:px-6 lg:px-0 flex flex-col items-center">
-          {/* Latest News & Insights */}
-          <h2 className="text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 md:mb-9 w-full text-left max-w-7xl pl-4 sm:pl-6">
+          {/* <h2 className="text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 md:mb-9 w-full text-left max-w-7xl pl-4 sm:pl-6">
             Latest News & Insights
           </h2>
-          {/* Blog Carousel */}
           <div className="w-full max-w-7xl mb-10 sm:mb-12 md:mb-16 px-4">
             <div className="relative">
               <button
@@ -273,7 +327,7 @@ export default function Home() {
                 ›
               </button>
             </div>
-          </div>
+          </div> */}
           {/* Supported By */}
           <h3 className="text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 md:mb-9 w-full text-left max-w-7xl pl-4 sm:pl-6">
             Supported By
@@ -443,14 +497,17 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#news" className="hover:text-[#FA7A50] transition">
+                  <Link
+                    href="/#news"
+                    className="hover:text-[#FA7A50] transition"
+                  >
                     News & Insights
                   </Link>
                 </li>
               </ul>
             </div>
             {/* Solutions */}
-            <div>
+            {/* <div>
               <h4 className="text-white text-lg sm:text-xl font-semibold mb-4">
                 Solutions
               </h4>
@@ -471,7 +528,7 @@ export default function Home() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
             {/* Contact */}
             <div>
               <h4 className="text-white text-lg sm:text-xl font-semibold mb-4">
@@ -483,17 +540,10 @@ export default function Home() {
                     href="mailto:contact@tracexero.com"
                     className="hover:text-[#FA7A50] transition"
                   >
-                    contact@tracexero.com
+                    info@tracexero.com
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="tel:+911234567890"
-                    className="hover:text-[#FA7A50] transition"
-                  >
-                    +91 12345 67890
-                  </a>
-                </li>
+
                 <li>Jaipur, Delhi, India</li>
               </ul>
             </div>
@@ -504,8 +554,9 @@ export default function Home() {
               </h4>
               <div className="flex items-center gap-4">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/tracexero/"
                   aria-label="LinkedIn"
+                  target="_blank"
                   className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
                 >
                   <svg
@@ -518,8 +569,10 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="#"
-                  aria-label="Twitter"
+                  href="https://www.instagram.com/tracexero/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
                   className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
                 >
                   <svg
@@ -528,21 +581,7 @@ export default function Home() {
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path d="M22 5.92c-.75.33-1.55.55-2.39.65a4.16 4.16 0 0 0 1.83-2.3 8.27 8.27 0 0 1-2.62 1 4.13 4.13 0 0 0-7.03 3.77A11.72 11.72 0 0 1 3.16 4.87a4.12 4.12 0 0 0 1.28 5.5 4.1 4.1 0 0 1-1.87-.52v.05a4.14 4.14 0 0 0 3.31 4.05c-.45.12-.93.18-1.42.07a4.14 4.14 0 0 0 3.86 2.87A8.29 8.29 0 0 1 2 18.57a11.7 11.7 0 0 0 6.34 1.86c7.61 0 11.77-6.31 11.77-11.77 0-.18 0-.36-.01-.53A8.38 8.38 0 0 0 22 5.92z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  aria-label="YouTube"
-                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M23.5 7.5s-.23-1.62-.93-2.33c-.9-.94-1.9-.94-2.36-.99C16.63 4 12 4 12 4h-.01s-4.63 0-8.2.18c-.46.05-1.46.05-2.36.99C.73 5.88.5 7.5.5 7.5S.3 9.4.3 11.31v1.37C.3 14.6.5 16.5.5 16.5s.23 1.62.93 2.33c.9.94 2.08.91 2.61 1.01 1.9.18 8 .19 8 .19s4.63 0 8.2-.18c.46-.05 1.46-.05 2.36-.99.7-.71.93-2.33.93-2.33s.2-1.9.2-3.81v-1.37c0-1.91-.2-3.81-.2-3.81zM9.75 14.39V8.61l6.13 2.89-6.13 2.89z" />
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </a>
               </div>
