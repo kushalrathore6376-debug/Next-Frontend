@@ -166,6 +166,7 @@ export default function TimelineCarousel() {
             className="border border-orange-400 px-8 sm:px-10 md:px-12 py-3 sm:py-4 text-orange-400 tracking-wider sm:tracking-widest rounded-none hover:bg-orange-400 hover:text-black transition flex items-center justify-between text-sm sm:text-base md:text-lg font-light w-full sm:w-auto"
           >
             3 POINT CLIMATE IMPACT GOAL{" "}
+            
             <span className="ml-2 sm:ml-3">&gt;</span>
           </Link>
         </div>
