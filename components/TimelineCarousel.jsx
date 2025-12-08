@@ -167,6 +167,7 @@ export default function TimelineCarousel() {
           >
             3 POINT CLIMATE IMPACT GOAL{" "}
             
+
             <span className="ml-2 sm:ml-3">&gt;</span>
           </Link>
         </div>
