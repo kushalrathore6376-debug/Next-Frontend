@@ -119,7 +119,7 @@ export default function Home() {
                 href="/timeline"
                 className="w-full md:w-auto border border-orange-400 px-8 py-3 text-orange-400 tracking-widest rounded-none hover:bg-orange-400 hover:text-black transition flex items-center justify-between"
               >
-                TIMELINE
+                About Trace Xero
                 <span className="ml-2">&gt;</span>
               </Link>
             </div>

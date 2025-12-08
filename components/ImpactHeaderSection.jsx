@@ -17,7 +17,7 @@ export default function ImpactHeaderSection() {
               className="text-white text-xl sm:text-2xl md:text-3xl font-semibold md:font-bold text-left leading-tight"
               style={{ textShadow: "0 2px 24px #000" }}
             >
-              Impact Beyond Emmissions
+              Impact Beyond Emissions
             </h2>
           </div>
         </div>

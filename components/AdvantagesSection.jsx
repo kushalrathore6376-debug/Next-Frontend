@@ -14,7 +14,7 @@ const advantages = [
   {
     title: "Valuable Byproducts",
     description:
-      "The graphitic carbon produced can be utilized in industries such as electronics, batteries, and other valuable fields.",
+      "The Graphitic Carbon produced can be utilized in industries such as electronics, batteries, and other valuable fields.",
   },
   {
     title: "Scalability",
