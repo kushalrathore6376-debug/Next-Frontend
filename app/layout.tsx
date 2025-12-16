@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand, Lato } from "next/font/google";
 import "./globals.css";
+import Navbar from "../components/Navbar";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -30,7 +31,10 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${quicksand.variable} ${lato.variable} antialiased`}
       >
-        {children}
+        <div className="min-h-screen bg-slate-950 text-slate-100">
+          <Navbar />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );

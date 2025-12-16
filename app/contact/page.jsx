@@ -80,15 +80,10 @@ export default function ContactPage() {
                   href="mailto:contact@tracexero.com"
                   className="underline underline-offset-4"
                 >
-                  contact@tracexero.com
+                  info@tracexero.com
                 </a>
               </p>
-              <p>
-                <span className="text-white">Phone:</span>{" "}
-                <a href="tel:+911234567890" className="underline underline-offset-4">
-                  +91 12345 67890
-                </a>
-              </p>
+              
             </div>
             <p className="text-sm text-white/60">
               Offices in Jaipur & Delhi • Available Monday–Friday, 9am–7pm IST
