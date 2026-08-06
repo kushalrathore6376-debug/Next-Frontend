@@ -1,0 +1,290 @@
+/* Scoped styles for the embedded Digital Twin viewer. All classes are
+   prefixed `dt-` so they can't collide with the site's own globals.css. */
+
+.dt-app-layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.dt-canvas-wrap {
+  flex: 1;
+  height: 100%;
+  position: relative; /* anchors the overlay controls over the canvas */
+  min-width: 0;
+  min-height: 0;
+  background: #0e1116;
+}
+
+/* Exterior/Cutaway switch, floating over the render. A sliding pill does
+   the movement so the two labels stay put and only the highlight travels. */
+.dt-view-toggle {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  padding: 0.28rem;
+  border-radius: 999px;
+  background: rgba(16, 19, 24, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.45);
+  z-index: 5;
+}
+
+.dt-view-option {
+  position: relative;
+  z-index: 1;
+  appearance: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(233, 239, 246, 0.55);
+  transition: color 0.35s ease;
+}
+
+.dt-view-option.active {
+  color: #0f1216;
+}
+
+.dt-view-thumb {
+  position: absolute;
+  top: 0.28rem;
+  left: 0.28rem;
+  width: calc(50% - 0.28rem);
+  height: calc(100% - 0.56rem);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f2f6fa, #cfd9e4);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  transition: transform 0.55s cubic-bezier(0.34, 1.4, 0.5, 1);
+}
+
+.dt-view-thumb.right {
+  transform: translateX(100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dt-view-thumb {
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+}
+
+/* ---- overview caption -------------------------------------------------- */
+
+.dt-tour {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.dt-tour-card {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: min(22rem, calc(100% - 2rem));
+  padding: 0.9rem 2.4rem 0.9rem 1.05rem;
+  border-radius: 14px;
+  background: rgba(14, 17, 22, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+
+.dt-tour-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(226, 235, 244, 0.72);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dt-tour-close:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.dt-tour-index {
+  margin: 0 0 0.3rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6ee7ff;
+}
+
+.dt-tour-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.dt-tour-blurb {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: rgba(226, 235, 244, 0.68);
+}
+
+/* ---- 3D unavailable fallback -------------------------------------------- */
+
+.dt-twin-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 2rem;
+  text-align: center;
+  color: rgba(233, 239, 246, 0.85);
+}
+
+.dt-twin-fallback h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: rgba(233, 239, 246, 0.92);
+}
+
+.dt-twin-fallback p {
+  margin: 0;
+  max-width: 26rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: rgba(226, 235, 244, 0.55);
+}
+
+/* ---- 3D load failure (genuine render crash, not WebGL unavailability) --- */
+
+.dt-canvas-error {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 2rem;
+  text-align: center;
+  background: #171b22;
+  color: rgba(233, 239, 246, 0.85);
+}
+
+.dt-canvas-error p {
+  margin: 0;
+  max-width: 26rem;
+}
+
+.dt-canvas-error-detail {
+  font-size: 0.78rem;
+  color: rgba(226, 235, 244, 0.5);
+}
+
+/* ---- reset view ---------------------------------------------------------- */
+
+.dt-reset-view {
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  appearance: none;
+  padding: 0.42rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(16, 19, 24, 0.66);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  color: rgba(233, 239, 246, 0.85);
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.dt-reset-view:hover {
+  background: rgba(30, 35, 43, 0.85);
+  color: #fff;
+}
+
+/* ---- compact screens ------------------------------------------------------ */
+
+@media (max-width: 640px) {
+  .dt-tour-card {
+    left: 0.6rem;
+    right: 0.6rem;
+    bottom: 0.6rem;
+    width: auto;
+    padding: 0.75rem 2.6rem 0.8rem 0.85rem;
+    max-height: 32%;
+    overflow-y: auto;
+  }
+
+  .dt-tour-close {
+    top: 0.35rem;
+    right: 0.35rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .dt-tour-title {
+    font-size: 0.94rem;
+  }
+
+  .dt-tour-blurb {
+    font-size: 0.72rem;
+  }
+
+  .dt-view-toggle {
+    top: 0.6rem;
+  }
+
+  .dt-view-option {
+    padding: 0.55rem 0.95rem;
+    font-size: 0.7rem;
+  }
+
+  .dt-reset-view {
+    top: 0.62rem;
+    right: 0.6rem;
+    padding: 0.42rem 0.6rem;
+    font-size: 0;
+    gap: 0;
+  }
+
+  .dt-reset-view svg {
+    width: 15px;
+    height: 15px;
+  }
+}
