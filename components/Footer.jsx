@@ -34,7 +34,7 @@ export default function Footer() {
             <ul className="list-none space-y-4">
               <li><a href="mailto:info@tracexero.com" className="text-sm text-white/75 no-underline transition-all duration-300 hover:text-[#f0906a] font-light">info@tracexero.com</a></li>
             </ul>
-            <span className="text-sm text-white/75 font-light mt-4 block">Jaipur, Delhi, India</span>
+            <span className="text-sm text-white/75 font-light mt-4 block">Jaipur | Noida | Faridabad | Kolkata | Gurgaon </span>
           </div>
           <div>
             <h4 className="text-[11px] font-semibold text-white/75 mb-6 tracking-[.16em] uppercase">Follow</h4>

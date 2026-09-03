@@ -152,7 +152,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* Differentiator */}
-      <section className="relative py-14 sm:py-[110px] lg:py-[130px] px-4 sm:px-6 lg:px-10 overflow-hidden" style={{ background: 'var(--paper-2)' }}>
+      <section className="canopy-wash relative py-14 sm:py-[110px] lg:py-[130px] px-4 sm:px-6 lg:px-10 overflow-hidden" style={{ background: 'var(--paper-2)' }}>
         <div className="rule absolute top-0 inset-x-0" />
         <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-[2]">
           <div className="reveal-l">
@@ -256,7 +256,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* Advantages */}
-      <section className="relative py-14 sm:py-[110px] lg:py-[130px] px-4 sm:px-6 lg:px-10 overflow-hidden" style={{ background: 'var(--paper-2)' }}>
+      <section className="canopy-wash relative py-14 sm:py-[110px] lg:py-[130px] px-4 sm:px-6 lg:px-10 overflow-hidden" style={{ background: 'var(--paper-2)' }}>
         <div className="rule absolute top-0 inset-x-0" />
         <div className="max-w-[1280px] mx-auto relative z-[2]">
           <div className="max-w-[680px] mb-12 sm:mb-14 reveal">

@@ -54,13 +54,13 @@ const LEADERSHIP = [
   {
     name: "Dr. Pramod Sharma",
     role: "Chief Innovation Officer",
-    bio: "Researcher and chemical expert.",
+    bio: "Researcher and Chemical Expert.",
     photo: "pramod-sharma",
   },
   {
     name: "Dr. Mainak Palit",
     role: "Chief Product Officer",
-    bio: "10+ years in experimental condensed matter physics — electron microscopy, cryogenics, and low-dimensional materials.",
+    bio: "10+ Years in Experimental Condensed Matter Physics — Electron Microscopy, Cryogenics, and Low-Dimensional Materials.",
     photo: "mainak-palit",
   },
 ];
@@ -111,36 +111,37 @@ const ADVISORY = [
 function TeamCard({ person, delayClass }) {
   return (
     <div
-      className={`paper-card p-5 sm:p-6 text-center flex flex-col items-center reveal-s ${delayClass}`}
+      className={`team-card paper-card p-5 sm:p-7 text-center flex flex-col items-center h-full reveal-s ${delayClass}`}
     >
-      <div
-        className="w-[72px] h-[72px] sm:w-[84px] sm:h-[84px] rounded-full p-[2px] mb-3 sm:mb-4 shrink-0"
-        style={{
-          background: "linear-gradient(135deg, var(--orange), var(--green))",
-        }}
-      >
+      <div className="team-card-photo mb-4 sm:mb-5 shrink-0">
         <img
           src={`/team/${person.photo}.jpeg`}
           alt={person.name}
-          className="w-full h-full rounded-full object-cover object-top"
-          style={{ border: "2px solid var(--card)" }}
+          className="team-card-img"
           draggable={false}
         />
       </div>
-      <h3 className="font-display text-[14px] sm:text-[15px] text-ink leading-snug">
+      <h3 className="font-display text-[15px] sm:text-[16px] text-ink leading-snug">
         {person.name}
       </h3>
-      <p
-        className="text-[12px] font-medium mt-1 leading-snug"
-        style={{ color: "var(--orange)" }}
-      >
-        {person.role}
-      </p>
+      <p className="team-card-role mt-1.5 leading-snug">{person.role}</p>
       {person.bio && (
-        <p className="text-[12px] leading-[1.6] text-ink-soft font-light mt-2">
+        <p className="text-[12px] leading-[1.65] text-ink-soft font-light mt-3 max-w-[240px]">
           {person.bio}
         </p>
       )}
+    </div>
+  );
+}
+
+function TeamGroup({ title, children }) {
+  return (
+    <div className="mb-14 sm:mb-16 last:mb-0">
+      <div className="team-group-label mb-6 sm:mb-7">
+        <span className="team-group-dot" aria-hidden="true" />
+        <h3 className="font-display text-lg sm:text-xl text-ink">{title}</h3>
+      </div>
+      {children}
     </div>
   );
 }
@@ -205,7 +206,7 @@ export default function AboutPage() {
 
       {/* Impact stats */}
       <section
-        className="relative py-14 sm:py-[110px] lg:py-[130px] px-4 sm:px-6 lg:px-10 overflow-hidden"
+        className="canopy-wash relative py-14 sm:py-[110px] lg:py-[130px] px-4 sm:px-6 lg:px-10 overflow-hidden"
         style={{ background: "var(--paper-2)" }}
       >
         <div className="rule absolute top-0 inset-x-0" />
@@ -289,7 +290,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="relative py-14 sm:py-[110px] lg:py-[130px] px-4 sm:px-6 lg:px-10 overflow-hidden">
+      <section className="canopy-wash relative py-14 sm:py-[110px] lg:py-[130px] px-4 sm:px-6 lg:px-10 overflow-hidden">
         <div className="max-w-[1280px] mx-auto relative z-[2]">
           <div className="max-w-[680px] mb-12 sm:mb-14 reveal">
             <span className="eyebrow" style={{ color: "var(--orange)" }}>
@@ -307,45 +308,43 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mb-14 sm:mb-16">
-            <h3 className="font-display text-xl text-ink mb-6">
-              Leadership Team
-            </h3>
+          <TeamGroup title="Leadership Team">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
               {LEADERSHIP.map((p, i) => (
                 <TeamCard key={p.name} person={p} delayClass={`d${i + 1}`} />
               ))}
             </div>
-          </div>
+          </TeamGroup>
 
-          <div className="mb-14 sm:mb-16">
-            <h3 className="font-display text-xl text-ink mb-6">
-              Management & Operations
-            </h3>
+          <TeamGroup title="Management & Operations">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6">
               {MANAGEMENT.map((p, i) => (
                 <TeamCard key={p.name} person={p} delayClass={`d${i + 1}`} />
               ))}
             </div>
-          </div>
+          </TeamGroup>
 
-          <div>
-            <h3 className="font-display text-xl text-ink mb-6">
-              Advisory Team
-            </h3>
+          <TeamGroup title="Advisory Team">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-[880px]">
               {ADVISORY.map((p, i) => (
                 <TeamCard key={p.name} person={p} delayClass={`d${i + 1}`} />
               ))}
             </div>
-          </div>
+          </TeamGroup>
         </div>
       </section>
 
       <SupportedBy />
 
       {/* CTA */}
-      <section className="relative py-16 sm:py-[110px] px-4 sm:px-6 lg:px-10 overflow-hidden">
+      <section className="canopy-wash relative py-16 sm:py-[110px] px-4 sm:px-6 lg:px-10 overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(50% 60% at 50% 40%, rgba(95,143,62,.1), transparent 70%)",
+          }}
+        />
         <div className="max-w-[900px] mx-auto text-center relative z-[2] reveal">
           <span className="eyebrow" style={{ color: "var(--orange)" }}>
             Join Us

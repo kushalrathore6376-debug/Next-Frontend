@@ -3,7 +3,7 @@ import CycleCarousel from './CycleCarousel';
 /** "Decarbonise and Earn" (Circular Economy) section. */
 export default function DecarboniseSection() {
   return (
-    <section className="relative py-16 sm:py-[120px] lg:py-[150px] px-4 sm:px-6 lg:px-10 overflow-hidden" style={{ background: 'var(--paper-2)' }}>
+    <section className="canopy-wash relative py-16 sm:py-[120px] lg:py-[150px] px-4 sm:px-6 lg:px-10 overflow-hidden" style={{ background: 'var(--paper-2)' }}>
       <div className="rule absolute top-0 inset-x-0" />
       <div className="slide-sheet" style={{ background: 'linear-gradient(90deg,transparent,rgba(95,143,62,.05),transparent)' }} />
       <div className="streak" style={{ left: '40%', opacity: 0.3, animationDuration: '14s' }} />
