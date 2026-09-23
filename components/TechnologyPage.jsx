@@ -63,7 +63,7 @@ const ADVANTAGES = [
     n: 'Featured',
     title: 'Environmental Impact',
     body: 'Not only captures CO₂ but also reduces overall carbon footprint by producing useful materials — a net-negative climate contribution.',
-    metric: 'Net −',
+    metric: 'Net (-)ve',
     color: 'var(--orange)',
   },
   {

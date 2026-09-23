@@ -80,14 +80,7 @@ const MANAGEMENT = [
     name: "Hardik Abusariya",
     role: "CCU Automation & Data Management",
     photo: "hardik-abusariya",
-  },
-  { name: "Saurabh Tripathi", role: "Logistics", photo: "saurabh-tripathi" },
-
-  {
-    name: "Virendra Singh",
-    role: "Financial Operations",
-    photo: "virendra-singh",
-  },
+  }
 ];
 
 const ADVISORY = [
@@ -317,7 +310,7 @@ export default function AboutPage() {
           </TeamGroup>
 
           <TeamGroup title="Management & Operations">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 max-w-[920px]">
               {MANAGEMENT.map((p, i) => (
                 <TeamCard key={p.name} person={p} delayClass={`d${i + 1}`} />
               ))}
@@ -325,7 +318,7 @@ export default function AboutPage() {
           </TeamGroup>
 
           <TeamGroup title="Advisory Team">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-[880px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 max-w-[920px]">
               {ADVISORY.map((p, i) => (
                 <TeamCard key={p.name} person={p} delayClass={`d${i + 1}`} />
               ))}
