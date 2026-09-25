@@ -1,8 +1,25 @@
+import fs from "node:fs";
+import path from "node:path";
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
 import ImpactEmblem from "@/components/ImpactEmblem";
 import SupportedBy from "@/components/SupportedBy";
+
+const TEAM_IMAGE_EXTS = [".jpeg", ".jpg", ".png", ".webp"];
+
+function teamPhotoSrc(photo) {
+  if (/\.(jpe?g|png|webp|avif|gif)$/i.test(photo)) {
+    return `/team/${photo}`;
+  }
+
+  const dir = path.join(process.cwd(), "public", "team");
+  const ext = TEAM_IMAGE_EXTS.find((item) =>
+    fs.existsSync(path.join(dir, `${photo}${item}`)),
+  );
+
+  return `/team/${photo}${ext ?? ".jpeg"}`;
+}
 
 const STATS = [
   {
@@ -108,7 +125,7 @@ function TeamCard({ person, delayClass }) {
     >
       <div className="team-card-photo mb-4 sm:mb-5 shrink-0">
         <img
-          src={`/team/${person.photo}.jpeg`}
+          src={teamPhotoSrc(person.photo)}
           alt={person.name}
           className="team-card-img"
           draggable={false}
