@@ -58,13 +58,13 @@ const VALUES = [
 const LEADERSHIP = [
   {
     name: "Deependra Singh Shekhawat",
-    role: "CEO",
+    role: "Founder & Chief Executive Officer",
     bio: "Extensive experience in corporate finance and global trade operations.",
     photo: "deependra-singh-shekhawat",
   },
   {
     name: "Reetam Chaudhury",
-    role: "CTO",
+    role: "Chief Technology Officer",
     bio: "Materials science and sustainability expert leading technical innovation.",
     photo: "reetam-chaudhury",
   },
