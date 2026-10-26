@@ -97,11 +97,7 @@ const MANAGEMENT = [
     role: "Company Finances & Growth",
     photo: "kirti-raj-singh-shekhawat",
   },
-  {
-    name: "Hardik Abusariya",
-    role: "CCU Automation & Data Management",
-    photo: "hardik-abusariya",
-  }
+ 
 
 ];
 
